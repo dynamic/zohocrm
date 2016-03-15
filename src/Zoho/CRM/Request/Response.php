@@ -180,7 +180,7 @@ class Response
     }
 
     // convertLead
-    elseif ((string) $xml->getName() == 'success') {
+    elseif ((string) $xml->getName() == 'success' || $xml->result->message == 'Record(s) added successfully') {
       $records = array();
       foreach ($xml->children() as $child) {
         $records[(string) $child->getName()] = (string) $child;
